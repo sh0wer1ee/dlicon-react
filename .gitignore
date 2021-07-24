@@ -21,3 +21,16 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# assets
+/public/icons
+/src/icons
+/assets_process/assets
+/assets_process/icons
+/assets_process/json
+/assets_process/download_assets.cmd
+
+copy_res_from_gitee.cmd
+
+
+

@@ -1,13 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500&display=swap');
+
 body {
+  background-color: #ccc;
+  font-family: 'Noto Sans SC', sans-serif;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.app {
+  position: relative;
+  text-align: center;
+}
+
+.icons {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.icons_item {
+  display: inline-flex;
+  margin: 10px;
+}
+
+.icon {
+  position: relative;
+  z-index: 20000;
+  overflow: hidden;
+  background-color: #eee;
+  cursor: pointer;
+}
+
+.icon_image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  border: none;
+  background-color: transparent;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.icon,
+.icon_image {
+  width: 140px;
+  height: 140px;
+}
+.icon_name {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  pointer-events: none;
 }
