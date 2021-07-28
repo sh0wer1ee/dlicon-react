@@ -9,7 +9,6 @@ import Box from "@material-ui/core/Box";
 
 //import indexJson from "./data/index.json";
 import IconGroup from "./components/iconGroup";
-import ResultDialog from "./components/resultDialog";
 
 const types = ["chara", "dragon", "weapon", "amulet"];
 var indexJson = {};
@@ -66,14 +65,10 @@ class App extends Component {
     super(props);
     this.state = {
       value: 0,
-      iconList: [],
-      linkList: [],
+
       type: "chara",
       loaded: false,
     };
-    this.addToList = this.addToList.bind(this);
-    this.removeFromList = this.removeFromList.bind(this);
-    this.generateLinksFromList = this.generateLinksFromList.bind(this);
   }
 
   componentDidMount() {
@@ -90,44 +85,12 @@ class App extends Component {
       );
   }
 
-  addToList(id) {
-    var newIconList = this.state.iconList;
-    newIconList.push(id);
-    this.setState({ iconList: newIconList });
-    console.log(newIconList);
-  }
-
-  removeFromList(id) {
-    var newIconList = this.state.iconList;
-    var index = newIconList.indexOf(id);
-    if (index !== -1) {
-      newIconList.splice(index, 1);
-    }
-    this.setState({ iconList: newIconList });
-    console.log(newIconList);
-  }
-
-  generateLinksFromList(usingNgaLink, inSelectedOrder) {
-    var iconList = this.state.iconList;
-
-    var newLinkList = iconList.map((id) => {
-      var type = types[parseInt(id[0] - 1)];
-      return {
-        id: id,
-        giteeLink: `[img]${indexJson[type][id].path}[/img]`.replace(
-          "./",
-          "https://sh0wer1ee.gitee.io/dlicons/"
-        ),
-        ngaLink: `[img]${indexJson[type][id].nga_path}[/img]`,
-      };
-    });
-
-    this.setState({ linkList: newLinkList });
-  }
-
   render() {
     const handleChange = (event, newValue) => {
-      this.setState({ value: newValue, type: types[newValue], iconList: [] });
+      this.setState({
+        value: newValue,
+        type: types[newValue],
+      });
     };
 
     return (
@@ -181,10 +144,6 @@ class App extends Component {
               removeFromList={this.removeFromList}
             />
           </TabPanel>
-          <ResultDialog
-            generateLinksFromList={this.generateLinksFromList}
-            linkList={this.state.linkList}
-          ></ResultDialog>
         </ThemeProvider>
       )
     );

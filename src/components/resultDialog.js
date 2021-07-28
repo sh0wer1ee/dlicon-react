@@ -6,6 +6,7 @@ import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Fab from "@material-ui/core/Fab";
 import FileDownloadIcon from "@material-ui/icons/FileDownload";
+import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import IconButton from "@material-ui/core/IconButton";
 import CopyToClipBoard from "react-copy-to-clipboard";
 import AssignmentIcon from "@material-ui/icons/Assignment";
@@ -14,6 +15,7 @@ import Divider from "@material-ui/core/Divider";
 import Switch from "@material-ui/core/Switch";
 import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
+import { Fade, Grow } from "@material-ui/core";
 
 const textDisplayStyle = {
   fontFamily: ['"Noto Sans SC"', "sans-serif"].join(","),
@@ -21,7 +23,16 @@ const textDisplayStyle = {
   fontWeight: 700,
 };
 
-const fabTextDisplayStyle = {
+const generateFabStyle = {
+  position: "fixed",
+  bottom: "6rem",
+  right: "2rem",
+  fontFamily: ['"Noto Sans SC"', "sans-serif"].join(","),
+  fontSize: "0.85rem",
+  fontWeight: 700,
+};
+
+const clearFabStyle = {
   position: "fixed",
   bottom: "2rem",
   right: "2rem",
@@ -76,6 +87,20 @@ export default function ResultDialog(props) {
   };
   return (
     <div>
+      <Grow in={props.hasValueInQueue}>
+        <Fab
+          variant="extended"
+          color="secondary"
+          aria-label="clear"
+          onClick={() => {
+            props.clearAllSelected();
+          }}
+          style={generateFabStyle}
+        >
+          <DeleteForeverIcon />
+          清空选择
+        </Fab>
+      </Grow>
       <Fab
         variant="extended"
         color="primary"
@@ -84,7 +109,7 @@ export default function ResultDialog(props) {
           handleClickOpen();
           props.generateLinksFromList();
         }}
-        style={fabTextDisplayStyle}
+        style={clearFabStyle}
       >
         <FileDownloadIcon />
         生成图片链接
