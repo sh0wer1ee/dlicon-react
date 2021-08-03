@@ -2466,6 +2466,18 @@
             "nga_path": "./mon_202107/11/-pobugQ2o-855lKdT8S28-28.png",
             "path": "./icons/amulet/s/400403_02.png"
         },
+        "400405_01": {
+            "id": "40050139",
+            "name": "风靡一祭",
+            "nga_path": "./mon_202107/29/-pobugQ7edy-4aetKcT8S28-28.png",
+            "path": "./icons/amulet/s/400405_01.png"
+        },
+        "400405_02": {
+            "id": "40050139",
+            "name": "风靡一祭",
+            "nga_path": "./mon_202107/29/-pobugQ7edy-htr4KcT8S28-28.png",
+            "path": "./icons/amulet/s/400405_02.png"
+        },
         "400406_01": {
             "id": "40040067",
             "name": "猫猪趣画",
@@ -3275,6 +3287,18 @@
             "name": "阳光下的人偶",
             "nga_path": "./mon_202107/11/-pobugQ2o-33j4KcT8S28-28.png",
             "path": "./icons/amulet/s/400478_02.png"
+        },
+        "400479_01": {
+            "id": "40050138",
+            "name": "顶级夏日",
+            "nga_path": "./mon_202107/29/-pobugQ7edy-axbtKcT8S28-28.png",
+            "path": "./icons/amulet/s/400479_01.png"
+        },
+        "400479_02": {
+            "id": "40050138",
+            "name": "顶级夏日",
+            "nga_path": "./mon_202107/29/-pobugQ7edy-3w9qKcT8S28-28.png",
+            "path": "./icons/amulet/s/400479_02.png"
         }
     },
     "chara": {
@@ -3295,6 +3319,12 @@
             "name": "主人公（Fes限定Ver.）",
             "nga_path": "./mon_202107/11/-pobugQ2o-669yKdT8S28-28.png",
             "path": "./icons/chara/s/100001_08_r05.png"
+        },
+        "100001_12_r05": {
+            "id": "10350506",
+            "name": "主人公（夏日Ver.）",
+            "nga_path": "./mon_202107/29/-pobugQ7edy-ccm2KdT8S28-28.png",
+            "path": "./icons/chara/s/100001_12_r05.png"
         },
         "100002_01_r04": {
             "id": "10540201",
@@ -3511,6 +3541,12 @@
             "name": "莱昂尼多（Fes限定Ver.）",
             "nga_path": "./mon_202107/11/-pobugQ2o-7ej3KdT8S28-28.png",
             "path": "./icons/chara/s/100013_04_r05.png"
+        },
+        "100013_06_r05": {
+            "id": "10550503",
+            "name": "莱昂尼多（夏日Ver.）",
+            "nga_path": "./mon_202107/30/-pobugQ8im1-9146KcT8S28-28.png",
+            "path": "./icons/chara/s/100013_06_r05.png"
         },
         "100015_04_r05": {
             "id": "10650503",
@@ -5354,6 +5390,12 @@
             "nga_path": "./mon_202107/11/-pobugQ2o-j6q9KdT8S28-28.png",
             "path": "./icons/chara/s/110334_01_r05.png"
         },
+        "110334_02_r05": {
+            "id": "10450405",
+            "name": "亚斯拉姆（Fes限定Ver.）",
+            "nga_path": "./mon_202107/30/-pobugQ8im1-19e4KcT8S28-28.png",
+            "path": "./icons/chara/s/110334_02_r05.png"
+        },
         "110335_01_r04": {
             "id": "10540502",
             "name": "帕蒂亚",
@@ -7026,6 +7068,12 @@
             "nga_path": "./mon_202107/11/-pobugQ2o-jdklKcT8S28-28.png",
             "path": "./icons/weapon/s/301151_01_60301.png"
         },
+        "301152_01_60401": {
+            "id": "30160403",
+            "name": "卡拉德波加",
+            "nga_path": "./mon_202107/30/-pobugQ8im1-dfnqKcT8S28-28.png",
+            "path": "./icons/weapon/s/301152_01_60401.png"
+        },
         "301153_01_60501": {
             "id": "30160503",
             "name": "倚天剑",
@@ -7566,6 +7614,12 @@
             "nga_path": "./mon_202107/11/-pobugQ2o-k1oeKbT8S28-28.png",
             "path": "./icons/weapon/s/302140_01_60301.png"
         },
+        "302141_01_60401": {
+            "id": "30260403",
+            "name": "佛拉格拉克",
+            "nga_path": "./mon_202107/30/-pobugQ8im1-518qKbT8S28-28.png",
+            "path": "./icons/weapon/s/302141_01_60401.png"
+        },
         "302142_01_60501": {
             "id": "30260503",
             "name": "七星宝刀",
@@ -8094,6 +8148,12 @@
             "nga_path": "./mon_202107/11/-pobugQ2o-g2piKcT8S28-28.png",
             "path": "./icons/weapon/s/303139_01_60301.png"
         },
+        "303140_01_60401": {
+            "id": "30360403",
+            "name": "克劳索拉斯",
+            "nga_path": "./mon_202107/30/-pobugQ8im1-h5niKcT8S28-28.png",
+            "path": "./icons/weapon/s/303140_01_60401.png"
+        },
         "303141_01_60501": {
             "id": "30360503",
             "name": "青虹剑",
@@ -8591,6 +8651,12 @@
             "name": "玛米亚多斯",
             "nga_path": "./mon_202107/11/-pobugQ2o-9lciKdT8S28-28.png",
             "path": "./icons/weapon/s/304136_01_60301.png"
+        },
+        "304137_01_60401": {
+            "id": "30460403",
+            "name": "洛戈莫尔",
+            "nga_path": "./mon_202107/30/-pobugQ8im1-7pj8KcT8S28-28.png",
+            "path": "./icons/weapon/s/304137_01_60401.png"
         },
         "304138_01_60501": {
             "id": "30460503",
@@ -9120,6 +9186,12 @@
             "nga_path": "./mon_202107/11/-pobugQ2o-4tzjKbT8S28-28.png",
             "path": "./icons/weapon/s/305146_01_60301.png"
         },
+        "305147_01_60401": {
+            "id": "30560403",
+            "name": "阿莱德巴尔",
+            "nga_path": "./mon_202107/30/-pobugQ8im1-jpknKbT8S28-28.png",
+            "path": "./icons/weapon/s/305147_01_60401.png"
+        },
         "305148_01_60501": {
             "id": "30560503",
             "name": "青龙偃月刀",
@@ -9647,6 +9719,12 @@
             "name": "必中之弓",
             "nga_path": "./mon_202107/11/-pobugQ2o-1iqkKcT8S28-28.png",
             "path": "./icons/weapon/s/306138_01_60301.png"
+        },
+        "306139_01_60401": {
+            "id": "30660403",
+            "name": "塔斯兰",
+            "nga_path": "./mon_202107/30/-pobugQ8im1-bdb3KbT8S28-28.png",
+            "path": "./icons/weapon/s/306139_01_60401.png"
         },
         "306140_01_60501": {
             "id": "30660503",
@@ -10182,6 +10260,12 @@
             "nga_path": "./mon_202107/11/-pobugQ2o-f7jeKcT8S28-28.png",
             "path": "./icons/weapon/s/307145_01_60301.png"
         },
+        "307146_01_60401": {
+            "id": "30760403",
+            "name": "布里欧纳克",
+            "nga_path": "./mon_202107/30/-pobugQ8im1-3kh6KbT8S28-28.png",
+            "path": "./icons/weapon/s/307146_01_60401.png"
+        },
         "307147_01_60501": {
             "id": "30760503",
             "name": "九命之锡",
@@ -10644,6 +10728,12 @@
             "nga_path": "./mon_202107/11/-pobugQ2o-fuaKbT8S28-28.png",
             "path": "./icons/weapon/s/308137_01_60301.png"
         },
+        "308138_01_60401": {
+            "id": "30860403",
+            "name": "戴尔福里斯",
+            "nga_path": "./mon_202107/30/-pobugQ8im1-h0h4KcT8S28-28.png",
+            "path": "./icons/weapon/s/308138_01_60401.png"
+        },
         "308139_01_60501": {
             "id": "30860503",
             "name": "藜杖",
@@ -10848,6 +10938,12 @@
             "nga_path": "./mon_202107/11/-pobugQ2o-4nuaKcT8S28-28.png",
             "path": "./icons/weapon/s/309033_01_60301.png"
         },
+        "309034_01_60401": {
+            "id": "30960403",
+            "name": "迦耶阿萨尔",
+            "nga_path": "./mon_202107/30/-pobugQ8im1-8om2KcT8S28-28.png",
+            "path": "./icons/weapon/s/309034_01_60401.png"
+        },
         "309035_01_60501": {
             "id": "30960503",
             "name": "万里起云烟",
@@ -10883,6 +10979,12 @@
             "name": "苍蓝决意",
             "nga_path": "./mon_202107/11/-pobugQ2o-kckiKbT8S28-28.png",
             "path": "./icons/weapon/s/397004_01_59901.png"
+        },
+        "397005_01_59901": {
+            "id": "30750116",
+            "name": "遥忆未来",
+            "nga_path": "./mon_202107/30/-pobugQ8im1-lcvsKbT8S28-28.png",
+            "path": "./icons/weapon/s/397005_01_59901.png"
         },
         "399016_01_59901": {
             "id": "30159917",
