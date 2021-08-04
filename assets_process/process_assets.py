@@ -1,6 +1,7 @@
 import os
 import re
 import shutil
+import tqdm
 import UnityPy
 import json
 import timeit
@@ -47,46 +48,49 @@ def combineA8(imageData):
     return Image.merge("RGBA", (r, g, b, a))
 
 
-def dumpImages(filename, asset_type):
+def dumpImages(filename, asset_type, saveimage):
+
     assets_dir = os.path.join(ASSETS, process_dic[asset_type])
     output_path = os.path.join(IMG, asset_type)
     imageData = {}
-    env = UnityPy.load(os.path.join(assets_dir, filename))
-    for obj in env.objects:
-        data = obj.read()
-        if str(data.type) == 'AssetBundle':
-            imageData['name'] = data.name
-        if str(data.type) == 'Texture2D':
-            if 'alpha' in str(data.name):
-                imageData['a8'] = data.image
-            else:
-                imageData['img'] = data.image
-    filepath = os.path.join(output_path, '%s.png' % filename)
-    os.makedirs(os.path.dirname(filepath), exist_ok=True)
-    try:
-        combineA8(imageData).save(filepath)
-    except KeyError:  # The best way to fight with shitty codes is writing shittier codes to counterattack
-        # print(imageData['name'])
-        missing_path = '%s%s' % ('s.', process_dic[asset_type])
-        missing_dir = os.path.join(ASSETS, missing_path)
-        missing_asset = imageData['name'].split('/')[-1].split('.')[0]
-        #print(os.path.join(missing_dir, '%s%s' % (missing_asset, '_alphaa8')))
-
-        env = UnityPy.load(os.path.join(missing_dir, '%s%s' %
-                           (missing_asset, '_alphaa8')))
+    if saveimage:
+        env = UnityPy.load(os.path.join(assets_dir, filename))
         for obj in env.objects:
             data = obj.read()
+            if str(data.type) == 'AssetBundle':
+                imageData['name'] = data.name
             if str(data.type) == 'Texture2D':
                 if 'alpha' in str(data.name):
                     imageData['a8'] = data.image
                 else:
                     imageData['img'] = data.image
-        combineA8(imageData).save(filepath)
-    if '/l' in asset_type:
-        output_path = os.path.join(IMG, asset_type.replace('/l', '/s'))
         filepath = os.path.join(output_path, '%s.png' % filename)
         os.makedirs(os.path.dirname(filepath), exist_ok=True)
-        combineA8(imageData).resize((80, 80)).save(filepath)
+        try:
+            combineA8(imageData).save(filepath)
+        except KeyError:  # The best way to fight with shitty codes is writing shittier codes to counterattack
+            # print(imageData['name'])
+            missing_path = '%s%s' % ('s.', process_dic[asset_type])
+            missing_dir = os.path.join(ASSETS, missing_path)
+            missing_asset = imageData['name'].split('/')[-1].split('.')[0]
+            #print(os.path.join(missing_dir, '%s%s' % (missing_asset, '_alphaa8')))
+
+            env = UnityPy.load(os.path.join(missing_dir, '%s%s' %
+                               (missing_asset, '_alphaa8')))
+            for obj in env.objects:
+                data = obj.read()
+                if str(data.type) == 'Texture2D':
+                    if 'alpha' in str(data.name):
+                        imageData['a8'] = data.image
+                    else:
+                        imageData['img'] = data.image
+            combineA8(imageData).save(filepath)
+    if '/l' in asset_type:
+        if saveimage:
+            output_path = os.path.join(IMG, asset_type.replace('/l', '/s'))
+            filepath = os.path.join(output_path, '%s.png' % filename)
+            os.makedirs(os.path.dirname(filepath), exist_ok=True)
+            combineA8(imageData).resize((80, 80)).save(filepath)
         name, id = localize(filename, asset_type.split('/')[0])
         image_dic[asset_type.split('/')[0]][filename] = {}
         image_dic[asset_type.split('/')[0]][filename]['id'] = id
@@ -145,10 +149,10 @@ def localize(id, type):
     return _name, _id
 
 
-def processAssets():
+def processAssets(saveimage=True):
     for path in process_dic:
-        for f in os.listdir(os.path.join(ASSETS, process_dic[path])):
-            dumpImages(f, path)
+        for f in tqdm.tqdm(os.listdir(os.path.join(ASSETS, process_dic[path]))):
+            dumpImages(f, path, saveimage)
     json.dump(image_dic, open('index.json', 'w', encoding='utf-8'),
               ensure_ascii=False, indent=4)
 
@@ -169,7 +173,7 @@ def processJson():
 
 def main():
     start = timeit.default_timer()
-    processAssets()
+    processAssets(False)
     end = timeit.default_timer()
     print('time spent: ' + str(end-start))
 
