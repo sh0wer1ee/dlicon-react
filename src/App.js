@@ -6,11 +6,9 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-
-//import indexJson from "./data/index.json";
 import IconGroup from "./components/iconGroup";
+import { types } from "./data/params";
 
-const types = ["chara", "dragon", "weapon", "amulet"];
 var indexJson = {};
 
 function TabPanel(props) {
@@ -89,26 +87,40 @@ class App extends Component {
     const handleChange = (event, newValue) => {
       this.setState({
         value: newValue,
-        type: types[newValue],
+        type: types[newValue].id,
       });
     };
 
     return (
       this.state.loaded && (
         <ThemeProvider theme={theme}>
-          <AppBar position="sticky">
+          <AppBar position="sticky" color="default">
             <Tabs
               value={this.state.value}
               onChange={handleChange}
               aria-label="icon tabs"
+              indicatorColor="primary"
+              textColor="primary"
             >
-              <Tab label="角色" style={textDisplayStyle} {...a11yProps(0)} />
-              <Tab label="龙" style={textDisplayStyle} {...a11yProps(1)} />
-              <Tab label="武器" style={textDisplayStyle} {...a11yProps(2)} />
               <Tab
-                label="龙辉护符"
+                label={types[0].name}
                 style={textDisplayStyle}
-                {...a11yProps(4)}
+                {...a11yProps(0)}
+              />
+              <Tab
+                label={types[1].name}
+                style={textDisplayStyle}
+                {...a11yProps(1)}
+              />
+              <Tab
+                label={types[2].name}
+                style={textDisplayStyle}
+                {...a11yProps(2)}
+              />
+              <Tab
+                label={types[3].name}
+                style={textDisplayStyle}
+                {...a11yProps(3)}
               />
             </Tabs>
           </AppBar>

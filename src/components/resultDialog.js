@@ -15,7 +15,7 @@ import Divider from "@material-ui/core/Divider";
 import Switch from "@material-ui/core/Switch";
 import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
-import { Fade, Grow } from "@material-ui/core";
+import { Grow } from "@material-ui/core";
 
 const textDisplayStyle = {
   fontFamily: ['"Noto Sans SC"', "sans-serif"].join(","),

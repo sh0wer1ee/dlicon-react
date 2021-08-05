@@ -1,6 +1,5 @@
 import os
-import re
-import shutil
+from argparse import ArgumentParser
 import tqdm
 import UnityPy
 import json
@@ -172,8 +171,14 @@ def processJson():
 
 
 def main():
+    parser = ArgumentParser(
+        description='Diff between versions and download the assets.')
+    parser.add_argument(
+        '-p', type=str, help='process icon files or not', default=True)
+    args = parser.parse_args()
+
     start = timeit.default_timer()
-    processAssets(False)
+    processAssets(args.p)
     end = timeit.default_timer()
     print('time spent: ' + str(end-start))
 
