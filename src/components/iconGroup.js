@@ -70,7 +70,7 @@ class IconGroup extends Component {
       if (
         selected ||
         this.checkMatchFilter(
-          this.props.iconJson[key].id,
+          key[0] === "3" ? key : this.props.iconJson[key].id,
           this.state.filterData
         )
       ) {
@@ -86,7 +86,7 @@ class IconGroup extends Component {
   }
 
   checkMatchFilter(item, filterData) {
-    if (item.startsWith("199")) {
+    if (item in idSubTable) {
       item = idSubTable[item];
     }
     for (var param in filterData) {
@@ -116,8 +116,8 @@ class IconGroup extends Component {
             return false;
           }
           break;
-        case "weapon_rarity": //30860403
-          if (!filterData[param].includes(parseInt(item[3]))) {
+        case "weapon_rarity": //302040_01_59901
+          if (!filterData[param].includes(parseInt(item[10]))) {
             return false;
           }
           break;
@@ -127,7 +127,7 @@ class IconGroup extends Component {
           }
           break;
         case "weapon_element":
-          if (!filterData[param].includes(parseInt(item[5]))) {
+          if (!filterData[param].includes(parseInt(item[12]))) {
             return false;
           }
           break;
