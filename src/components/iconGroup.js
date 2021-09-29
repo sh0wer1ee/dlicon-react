@@ -212,7 +212,9 @@ class IconGroup extends Component {
 
   selectAll() {
     let tmpIconList = this.state.iconList;
+    var tmpSelectedIconList = [];
     tmpIconList = tmpIconList.map((item) => {
+      tmpSelectedIconList.push(item.uniqueId);
       return {
         ...item,
         selected: true,
@@ -220,8 +222,7 @@ class IconGroup extends Component {
     });
     this.setState({
       iconList: tmpIconList,
-      selectedIconList: tmpIconList,
-      linkList: [],
+      selectedIconList: tmpSelectedIconList,
     });
   }
 
