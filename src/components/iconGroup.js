@@ -32,6 +32,7 @@ class IconGroup extends Component {
     this.removeFromList = this.removeFromList.bind(this);
     this.generateLinksFromList = this.generateLinksFromList.bind(this);
     this.clearAllSelected = this.clearAllSelected.bind(this);
+    this.selectAll = this.selectAll.bind(this);
   }
 
   componentDidMount() {
@@ -209,6 +210,21 @@ class IconGroup extends Component {
     });
   }
 
+  selectAll() {
+    let tmpIconList = this.state.iconList;
+    tmpIconList = tmpIconList.map((item) => {
+      return {
+        ...item,
+        selected: true,
+      };
+    });
+    this.setState({
+      iconList: tmpIconList,
+      selectedIconList: tmpIconList,
+      linkList: [],
+    });
+  }
+
   render() {
     return (
       this.state.initialzed && (
@@ -240,9 +256,15 @@ class IconGroup extends Component {
           <ResultDialog
             generateLinksFromList={this.generateLinksFromList}
             clearAllSelected={this.clearAllSelected}
+            selectAll={this.selectAll}
             linkList={this.state.linkList}
             hasValueInQueue={
               this.state.selectedIconList.length === 0 ? false : true
+            }
+            isQueueNotFull={
+              this.state.selectedIconList.length === this.state.iconList.length
+                ? false
+                : true
             }
           ></ResultDialog>
         </ThemeProvider>

@@ -29,6 +29,9 @@ yarn-error.log*
 /assets_process/icons
 /assets_process/json
 /assets_process/download_assets.cmd
+/assets_process/index
+/assets_process/index.json
+/assets_process/map.json
 
 copy_res_from_gitee.cmd
 

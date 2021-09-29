@@ -63,19 +63,19 @@ class App extends Component {
     super(props);
     this.state = {
       value: 0,
-
       type: "chara",
       loaded: false,
     };
   }
 
   componentDidMount() {
-    fetch("./index.json")
+    fetch("./index")
       .then((res) => res.json())
       .then(
         (result) => {
           indexJson = result;
           this.setState({ loaded: true });
+          console.log(this.state);
         },
         (error) => {
           console.log(error);

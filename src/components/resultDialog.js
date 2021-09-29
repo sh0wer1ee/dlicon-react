@@ -7,6 +7,7 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import Fab from "@material-ui/core/Fab";
 import FileDownloadIcon from "@material-ui/icons/FileDownload";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
+import SelectAllIcon from "@material-ui/icons/SelectAll";
 import IconButton from "@material-ui/core/IconButton";
 import CopyToClipBoard from "react-copy-to-clipboard";
 import AssignmentIcon from "@material-ui/icons/Assignment";
@@ -87,6 +88,20 @@ export default function ResultDialog(props) {
   };
   return (
     <div>
+      <Grow in={props.isQueueNotFull}>
+        <Fab
+          variant="extended"
+          color="primary"
+          aria-label="selectall"
+          onClick={() => {
+            props.selectAll();
+          }}
+          style={generateFabStyle}
+        >
+          <SelectAllIcon />
+          全选
+        </Fab>
+      </Grow>
       <Grow in={props.hasValueInQueue}>
         <Fab
           variant="extended"
@@ -101,19 +116,22 @@ export default function ResultDialog(props) {
           清空选择
         </Fab>
       </Grow>
-      <Fab
-        variant="extended"
-        color="primary"
-        aria-label="generate"
-        onClick={() => {
-          handleClickOpen();
-          props.generateLinksFromList();
-        }}
-        style={clearFabStyle}
-      >
-        <FileDownloadIcon />
-        生成图片链接
-      </Fab>
+      <Grow in={props.hasValueInQueue}>
+        <Fab
+          variant="extended"
+          color="primary"
+          aria-label="generate"
+          onClick={() => {
+            handleClickOpen();
+            props.generateLinksFromList();
+          }}
+          style={clearFabStyle}
+        >
+          <FileDownloadIcon />
+          生成图片链接
+        </Fab>
+      </Grow>
+
       <Dialog
         open={open}
         keepMounted

@@ -153,8 +153,9 @@ def processAssets(saveimage=True):
         for f in tqdm.tqdm(os.listdir(os.path.join(ASSETS, process_dic[path]))):
             dumpImages(f, path, saveimage)
     json.dump(image_dic, open('index.json', 'w', encoding='utf-8'),
-              ensure_ascii=False, indent=4)
-
+              ensure_ascii=True, indent=4)
+    json.dump(image_dic, open('index', 'w', encoding='utf-8'),
+              ensure_ascii=True, indent=4)
 
 def processJson():
     mapJson = {}
