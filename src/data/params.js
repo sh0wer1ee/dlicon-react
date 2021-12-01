@@ -31,11 +31,13 @@ export const filterType = {
 
 export const filterParam = {
   chara_rarity: [
+    { id: 0, name: "无", color: "#b5b5b5" },
     { id: 3, name: "三星", color: "#a67419" },
     { id: 4, name: "四星", color: "#b5b5b5" },
     { id: 5, name: "五星", color: "#fcc256" },
   ],
   chara_weapon_type: [
+    { id: 0, name: "无", color: "#b5b5b5" },
     { id: 1, name: "剑", color: "#0051c9" },
     { id: 2, name: "刀", color: "#0051c9" },
     { id: 3, name: "短剑", color: "#0051c9" },
@@ -47,25 +49,26 @@ export const filterParam = {
     { id: 9, name: "铳", color: "#0051c9" },
   ],
   chara_element: [
+    { id: 0, name: "无", color: "#b5b5b5" },
     { id: 1, name: "火", color: "#c92626" },
     { id: 2, name: "水", color: "#47b8de" },
     { id: 3, name: "风", color: "#00a331" },
     { id: 4, name: "光", color: "#fcc256" },
     { id: 5, name: "暗", color: "#520099" },
-    { id: 9, name: "无", color: "#b5b5b5" },
   ],
   dragon_rarity: [
+    { id: 0, name: "无", color: "#b5b5b5" },
     { id: 3, name: "三星", color: "#a67419" },
     { id: 4, name: "四星", color: "#b5b5b5" },
     { id: 5, name: "五星", color: "#fcc256" },
   ],
   dragon_element: [
+    { id: 0, name: "无", color: "#b5b5b5" },
     { id: 1, name: "火", color: "#c92626" },
     { id: 2, name: "水", color: "#47b8de" },
     { id: 3, name: "风", color: "#00a331" },
     { id: 4, name: "光", color: "#fcc256" },
     { id: 5, name: "暗", color: "#520099" },
-    { id: 9, name: "无", color: "#b5b5b5" },
   ],
   weapon_rarity: [
     { id: 1, name: "一星", color: "#a8b8a5" },

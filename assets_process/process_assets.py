@@ -93,7 +93,8 @@ def dumpImages(filename, asset_type, saveimage):
         name, id = localize(filename, asset_type.split('/')[0])
         image_dic[asset_type.split('/')[0]][filename] = {}
         image_dic[asset_type.split('/')[0]][filename]['id'] = id
-        image_dic[asset_type.split('/')[0]][filename]['name'] = name
+        image_dic[asset_type.split(
+            '/')[0]][filename]['name'] = name.replace('{player_name}', '尤蒂尔')
         try:
             image_dic[asset_type.split(
                 '/')[0]][filename]['nga_path'] = mp_json[filename]
@@ -156,6 +157,7 @@ def processAssets(saveimage=True):
               ensure_ascii=True, indent=4)
     json.dump(image_dic, open('index', 'w', encoding='utf-8'),
               ensure_ascii=True, indent=4)
+
 
 def processJson():
     mapJson = {}

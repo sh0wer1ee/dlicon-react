@@ -4,7 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import IconItem from "./iconItem";
 import ResultDialog from "./resultDialog";
 import ItemFilter from "./itemFilter";
-import { filterType, filterParam, idSubTable } from "../data/params";
+import { filterType, filterParam } from "../data/params";
 
 const theme = createTheme({
   typography: {
@@ -87,34 +87,66 @@ class IconGroup extends Component {
   }
 
   checkMatchFilter(item, filterData) {
+    /*
     if (item in idSubTable) {
       item = idSubTable[item];
     }
+    */
     for (var param in filterData) {
       switch (param) {
         case "chara_rarity": //10950402
-          if (!filterData[param].includes(parseInt(item[3]))) {
-            return false;
+          if (item.startsWith("19")) {
+            if (!filterData[param].includes(0)) {
+              return false;
+            }
+          } else {
+            if (!filterData[param].includes(parseInt(item[3]))) {
+              return false;
+            }
           }
           break;
         case "chara_weapon_type":
-          if (!filterData[param].includes(parseInt(item[2]))) {
-            return false;
+          if (item.startsWith("19")) {
+            if (!filterData[param].includes(0)) {
+              return false;
+            }
+          } else {
+            if (!filterData[param].includes(parseInt(item[2]))) {
+              return false;
+            }
           }
           break;
         case "chara_element":
-          if (!filterData[param].includes(parseInt(item[5]))) {
-            return false;
+          if (item.startsWith("19")) {
+            if (!filterData[param].includes(0)) {
+              return false;
+            }
+          } else {
+            if (!filterData[param].includes(parseInt(item[5]))) {
+              return false;
+            }
           }
           break;
         case "dragon_rarity": //20050310
-          if (!filterData[param].includes(parseInt(item[3]))) {
-            return false;
+          if (item.startsWith("21")) {
+            if (!filterData[param].includes(0)) {
+              return false;
+            }
+          } else {
+            if (!filterData[param].includes(parseInt(item[3]))) {
+              return false;
+            }
           }
           break;
         case "dragon_element":
-          if (!filterData[param].includes(parseInt(item[5]))) {
-            return false;
+          if (item.startsWith("21")) {
+            if (!filterData[param].includes(0)) {
+              return false;
+            }
+          } else {
+            if (!filterData[param].includes(parseInt(item[5]))) {
+              return false;
+            }
           }
           break;
         case "weapon_rarity": //302040_01_59901
